@@ -1,6 +1,7 @@
 package kz.kakainchik.catgenerator.data
 
 import kz.kakainchik.catgenerator.util.ApiResponse
+import kz.kakainchik.catgenerator.util.mapToError
 import javax.inject.Inject
 
 class CatRepository @Inject constructor(
@@ -10,7 +11,7 @@ class CatRepository @Inject constructor(
         return try {
             ApiResponse.Success(remoteDataSource.askCat(query))
         } catch(t: Throwable) {
-            ApiResponse.Error(t)
+            ApiResponse.Error(t.mapToError())
         }
     }
 
@@ -18,7 +19,7 @@ class CatRepository @Inject constructor(
         return try {
             ApiResponse.Success(remoteDataSource.loadCatImage(url))
         } catch(t: Throwable) {
-            ApiResponse.Error(t)
+            ApiResponse.Error(t.mapToError())
         }
     }
 
@@ -26,7 +27,7 @@ class CatRepository @Inject constructor(
         return try {
             ApiResponse.Success(remoteDataSource.askAllTags())
         } catch(t: Throwable) {
-            ApiResponse.Error(t)
+            ApiResponse.Error(t.mapToError())
         }
     }
 }

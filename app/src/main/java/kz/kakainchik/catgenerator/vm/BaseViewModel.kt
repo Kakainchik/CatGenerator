@@ -3,11 +3,12 @@ package kz.kakainchik.catgenerator.vm
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import kz.kakainchik.catgenerator.util.OperationErrorType
 
 abstract class BaseViewModel : ViewModel() {
-    private val _operationError = MutableLiveData<Throwable>()
+    private val _operationError = MutableLiveData<OperationErrorType>()
 
-    val operationError: MediatorLiveData<Throwable> = MediatorLiveData()
+    val operationError: MediatorLiveData<OperationErrorType> = MediatorLiveData()
     val isProcessing = MutableLiveData<Boolean>()
 
     init {
@@ -17,7 +18,7 @@ abstract class BaseViewModel : ViewModel() {
         }
     }
 
-    protected fun handleError(t: Throwable) {
+    protected fun handleError(t: OperationErrorType) {
         _operationError.postValue(t)
     }
 }

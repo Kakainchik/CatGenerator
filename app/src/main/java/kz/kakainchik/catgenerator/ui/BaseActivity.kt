@@ -5,10 +5,9 @@ import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.google.android.material.snackbar.Snackbar
-import io.ktor.client.plugins.*
 import kz.kakainchik.catgenerator.R
+import kz.kakainchik.catgenerator.util.OperationErrorType
 import kz.kakainchik.catgenerator.vm.BaseViewModel
-import java.net.UnknownHostException
 
 abstract class BaseActivity : AppCompatActivity() {
     protected abstract val viewModel: BaseViewModel
@@ -26,9 +25,12 @@ abstract class BaseActivity : AppCompatActivity() {
     protected open fun observeError(layout: View) {
         viewModel.operationError.observe(this, Observer {
             when(it) {
-                is UnknownHostException -> showSnackbar(layout, R.string.internet_connection_error)
-                is ClientRequestException -> showSnackbar(layout, R.string.client_request_error)
-                is ServerResponseException -> showSnackbar(layout, R.string.server_response_error)
+                OperationErrorType.CONNECTION_ERROR ->
+                    showSnackbar(layout, R.string.internet_connection_error)
+                OperationErrorType.PROCESSING_ERROR ->
+                    showSnackbar(layout, R.string.client_request_error)
+                OperationErrorType.RESPONSE_ERROR ->
+                    showSnackbar(layout, R.string.server_response_error)
             }
         })
     }
