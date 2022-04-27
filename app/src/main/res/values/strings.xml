@@ -23,4 +23,5 @@
     <string name="internet_connection_error">It seems there is no internet connection.</string>
     <string name="client_request_error">Invalid request.</string>
     <string name="server_response_error">Cannot connect to the server. Try again later.</string>
+    <string name="none_filter">None</string>
 </resources>

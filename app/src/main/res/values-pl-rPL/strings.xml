@@ -18,4 +18,5 @@
     <string name="internet_connection_error">Wygląda na to, że nie ma połączenia z Internetem.</string>
     <string name="client_request_error">Nieprawidłowe żądanie.</string>
     <string name="server_response_error">Nie można połączyć się z serwerem. Spróbuj później.</string>
+    <string name="none_filter">Brak</string>
 </resources>

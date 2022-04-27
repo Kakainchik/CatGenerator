@@ -3,7 +3,8 @@ package kz.kakainchik.catgenerator.data
 import androidx.annotation.StringRes
 import kz.kakainchik.catgenerator.R
 
-enum class CatFilter(val code: String, @StringRes val res: Int) {
+enum class CatFilter(val code: String?, @StringRes val res: Int) {
+    NONE(null, R.string.none_filter),
     BLUR("blur", R.string.blur_fulter),
     MONO("mono", R.string.mono_filter),
     SEPIA("sepia", R.string.sepia_filter),
