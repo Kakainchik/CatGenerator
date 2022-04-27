@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">CatGenerator</string>
+    <string name="choose_tag_label">Choose a  tag</string>
+    <string name="choose_filter_label">Choose a filter</string>
+    <string name="add_text_checkbox">Add text</string>
+    <string name="give_cat_bt">Give me a cat</string>
+    <string name="description_label">Description</string>
+    <string name="color_label">Color</string>
+    <string name="blur_fulter">Blur</string>
+    <string name="mono_filter">Mono</string>
+    <string name="sepia_filter">Sepia</string>
+    <string name="negative_filter">Negative</string>
+    <string name="paint_filter">Paint</string>
+    <string name="pixel_filter">Pixel</string>
+    <string name="white_color">White</string>
+    <string name="black_color">Black</string>
+    <string name="red_color">Red</string>
+    <string name="green_color">Green</string>
+    <string name="yellow_color">Yellow</string>
+    <string name="orange_color">Orange</string>
+    <string name="pink_color">Pink</string>
+    <string name="blue_color">Blue</string>
+    <string name="internet_connection_error">It seems there is no internet connection.</string>
+    <string name="client_request_error">Invalid request.</string>
+    <string name="server_response_error">Cannot connect to the server. Try again later.</string>
+</resources>
