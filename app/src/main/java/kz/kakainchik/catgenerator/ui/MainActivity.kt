@@ -7,6 +7,8 @@ import androidx.activity.viewModels
 import androidx.core.widget.doAfterTextChanged
 import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
+import com.google.android.material.button.MaterialButton
+import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.slider.Slider
 import com.google.android.material.textfield.TextInputEditText
 import dagger.hilt.android.AndroidEntryPoint
@@ -19,7 +21,8 @@ import kz.kakainchik.catgenerator.vm.CatViewModel
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity() {
-    private lateinit var giveCatButton: Button
+    private lateinit var giveCatButton: MaterialButton
+    private lateinit var progressIndicator: LinearProgressIndicator
 
     private var doAddDetails: Boolean = false
 
@@ -30,6 +33,7 @@ class MainActivity : BaseActivity() {
         setContentView(R.layout.activity_main)
 
         giveCatButton = findViewById(R.id.get_cat_bt)
+        progressIndicator = findViewById(R.id.progress_horizontal)
 
         initializeUI()
         observeError(findViewById(R.id.parent_layout))
@@ -38,10 +42,12 @@ class MainActivity : BaseActivity() {
 
     override fun onDataProcessing() {
         giveCatButton.isEnabled = false
+        progressIndicator.show()
     }
 
     override fun onDataProcessingCompleted() {
         giveCatButton.isEnabled = true
+        progressIndicator.hide()
     }
 
     private fun initializeUI() {
