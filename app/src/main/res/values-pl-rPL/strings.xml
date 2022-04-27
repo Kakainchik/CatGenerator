@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Generator Kotów</string>
+    <string name="choose_tag_label">Wybierz tag</string>
+    <string name="choose_filter_label">Wybierz filtr</string>
+    <string name="add_text_checkbox">Dodaj tekst</string>
+    <string name="give_cat_bt">Daj mi kota</string>
+    <string name="description_label">Opis</string>
+    <string name="color_label">Kolor</string>
+    <string name="white_color">Biały</string>
+    <string name="black_color">Czarny</string>
+    <string name="red_color">Czerwony</string>
+    <string name="green_color">Zielony</string>
+    <string name="yellow_color">Zółty</string>
+    <string name="orange_color">Pomarańczowy</string>
+    <string name="pink_color">Różowy</string>
+    <string name="blue_color">Niebieski</string>
+    <string name="internet_connection_error">Wygląda na to, że nie ma połączenia z Internetem.</string>
+    <string name="client_request_error">Nieprawidłowe żądanie.</string>
+    <string name="server_response_error">Nie można połączyć się z serwerem. Spróbuj później.</string>
+</resources>
